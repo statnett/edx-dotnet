@@ -9,7 +9,7 @@ There are four projects in this solution:
 1. [SimpleSender](SimpleSender), a simple example for sending data 
 1. [SimpleReceiver](SimpleReceiver), a simple example for receiving data
 
-Additionaly there is help on setting up a [stub environemnt](SETUP.md) for local development/testing
+Additionaly there is help on setting up a [stub environment](SETUP.md) for local development/testing
 
 For more complex examples, see the AmqpLiteNet home, which contains more complex send/receive examples. One example of transactional communication is also given:
 https://github.com/Azure/amqpnetlite/tree/master/test/Test.Amqp.Net
