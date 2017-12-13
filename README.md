@@ -3,15 +3,8 @@ https://github.com/Azure/amqpnetlite/tree/master/test/Test.Amqp.Net
 
 Contains send/receive examples, as well as transaction handling.
 
-Use of async send/receive methods is encouraged:
+These examples are synchronous, but amqpnetlite is encouraging use of async methods where available:
 http://azure.github.io/amqpnetlite/articles/building_application.html
-
-
-WaitTime = 5; // TODO: Config
-"ecp.endpoint.inbox"; // TODO: Config
-"ecp.endpoint.outbox"; // TODO: Config
-"ecp.endpoint.outbox.reply"; // TODO: Config
-
 
 Receive vs. Attach. vs. Credit vs. Callback
 
