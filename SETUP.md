@@ -37,7 +37,7 @@ Get docker-machine ip from the command line:
 docker ip
 ```
 
-This ip must be used in the App.config files shared between the examples. 
+This ip must be used in the App.config files of the given example you want to run. 
 
 Update the field _EdxUrl_ in App.config with the docker machine ip, for instance:
 ```
