@@ -10,8 +10,8 @@ This is a small extension over AmqpNetLite for simplifying communication with an
 There are four projects in this solution: 
 1. [EdxLib](EdxLib), the library itself
 1. [EdxLibTests](EdxLibTests), unit tests for the library
-1. [SimpleSender](SimpleSender), a simple example for sending data 
-1. [SimpleReceiver](SimpleReceiver), a simple example for receiving data
+1. [SimpleSender](SimpleSender), a basic console application for sending data
+1. [SimpleReceiver](SimpleReceiver), a basic console application for receiving data
 
 Additionaly there is help on setting up a [stub environment](SETUP.md) for local development/testing
 
