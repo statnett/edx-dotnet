@@ -19,10 +19,13 @@ namespace SimpleReceiver
         private static async Task SendMessage()
         {
             var edxUrl = ConfigurationManager.AppSettings["EdxUrl"];
-            var edxInbox = ConfigurationManager.AppSettings["EdxInboxQueue"];
+            
+            var readQueue = ConfigurationManager.AppSettings["EdxInboxQueue"]; // For reading normal input messages
+            //var readQueue = ConfigurationManager.AppSettings["EdxOutboxReplyQueue"]; // For reading sent message status from EDX
+
             var connection = new Connection(new Address(edxUrl));
             var session = new Session(connection);
-            var inbox = new ReceiverLink(session, "inbox", edxInbox);
+            var inbox = new ReceiverLink(session, "inbox", readQueue);
 
             // App settings            
             var timeout = int.Parse(ConfigurationManager.AppSettings["TimeoutMs"]);
