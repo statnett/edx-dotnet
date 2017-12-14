@@ -22,6 +22,6 @@ The samples on these pages are synchronous, amqpnetlite is however encouraging u
 
 http://azure.github.io/amqpnetlite/articles/building_application.html
 
-For more examples, see the AmqpLiteNet home, which contains more complex examples of sending/receiving messages. These examples including transaction handling as well as callback-based communication: 
+For more examples, see the AmqpLiteNet home, which contains more complex examples of sending/receiving messages. These examples include transaction handling as well as callback-based communication: 
 
 https://github.com/Azure/amqpnetlite/blob/master/Examples
