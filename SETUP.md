@@ -62,7 +62,7 @@ Hopefully you will see the number of messages succesfully sent in the _edx.endpo
 ###  Moving messages from outbox to inbox
 Unless you feel like hand-crafting the reply messages, a good way to receive test messages is to return the ones you have sent. This can be done by enabling _rabbitmq_shovel_. 
 
-__Note! This has been done *after* the first attempt at reading a message, or else RabbitMQ will create a persistent queue that is not supported directly by the AMQP 1.0-library__
+__Note! Use of _rabbitmq_shovel_ has to be performed *after* the first attempt at reading a message from the given queue, or else RabbitMQ will create a persistent queue that is not supported directly by the AMQP 1.0-library.__
 
 First, attach to the running docker instance by writing: 
 
