@@ -1,10 +1,10 @@
 # EDX extension for AmqpNetLite
 
-This is a small extension over AmqpNetLite for simplifying communication with an EDX-Toolbox. The most important part is:
+This is a small extension over AmqpNetLite for simplifying communication with an EDX-Toolbox. The most important topics are:
 
 1. Providing examples on how to connect with EDX.
 1. Encapsulating AMQP Application Properties that regularly would be [string-based](EdxLib/Constants.cs) 
-1. Helper-method for extracting binary content as a string when receiving messages
+1. Extracting binary content as a string when receiving messages
 
 ### Contents
 There are four projects in this solution: 
