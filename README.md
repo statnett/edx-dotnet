@@ -17,5 +17,5 @@ https://github.com/Azure/amqpnetlite/tree/master/test/Test.Amqp.Net
 The samples on these pages are synchronous, synchronous, but amqpnetlite is encouraging use of async methods where available:
 http://azure.github.io/amqpnetlite/articles/building_application.html
 
-There is also callback-based communication examples available: 
+There are also callback-based communication examples available: 
 https://github.com/Azure/amqpnetlite/blob/master/Examples
