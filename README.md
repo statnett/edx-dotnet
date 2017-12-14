@@ -4,7 +4,7 @@ This is a small extension over AmqpNetLite for simplifying communication with an
 
 1. Providing examples on how to connect with EDX.
 1. Encapsulating AMQP Application Properties that regularly would be [string-based](EdxLib/Constants.cs) 
-1. Extracting binary content as a string when receiving messages
+1. Unwrapping binary message content as a string when receiving messages
 
 ### Contents
 There are four projects in this solution: 
