@@ -16,7 +16,7 @@ There are four projects in this solution:
 
 Additionaly there is help on setting up a [stub environment](SETUP.md) for local development/testing
 
-For more examples, see the AmqpLiteNet home, which contains more complex send/receive examples as well as transaction handling:
+For more examples, see the AmqpLiteNet home, which contains more complex examples of sending/receiving messages (including transaction handling):
 https://github.com/Azure/amqpnetlite/tree/master/test/Test.Amqp.Net
 
 The samples on these pages are synchronous, amqpnetlite is however encouraging use of async methods where applicable:
