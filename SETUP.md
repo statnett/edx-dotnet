@@ -16,7 +16,7 @@ rabbitmq-plugins enable rabbitmq_amqp1_0
 
 ## Setup
 ### Prerequisites
-Before you get started you do need Docker installed, as this setup uses a [Docker](https://www.docker.com) image running [RabbitMQ](https://www.rabbitmq.com/) with [AMQP 1.0 Web Interface plugins](https://www.rabbitmq.com/plugins.html) enabled. 
+Before you get started you do need [Docker](https://www.docker.com) installed, as this setup uses an image running [RabbitMQ](https://www.rabbitmq.com/) with [AMQP 1.0 Web Interface plugins](https://www.rabbitmq.com/plugins.html) enabled. 
 
 The image we will be using can be found here:  
 * Source: https://github.com/it-herz/docker-rabbitmq 
