@@ -1,11 +1,11 @@
 ﻿using System;
 using System.Configuration;
 using Amqp;
-using EdxLib;
+using Statnett.EdxLib;
 
 namespace SimpleSender
 {
-    internal class Program
+    internal class Sender
     {
         /// <summary>
         /// Simple example building a message and sending it.
@@ -28,7 +28,7 @@ namespace SimpleSender
             const string content = "Hello world";
 
             var msgId = Guid.NewGuid();
-            var msg = MessageBuilder
+            var msg = FluentMessageBuilder
                 .CreateMessage("myBusinessType", content)
                 .WithReceiverAddress("endpoint@SERVICE-MYSERVICE")
                 .WithBusinessMessageId(msgId)

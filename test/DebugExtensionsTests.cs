@@ -1,7 +1,6 @@
-﻿using EdxLib;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace EdxLibTests
+namespace Statnett.EdxLib.Tests
 {
     [TestClass]
     public class DebugExtensionsTests
@@ -18,7 +17,7 @@ namespace EdxLibTests
         [TestMethod]
         public void ToVerboseString_CreatesRichOutput()
         {
-            var message = MessageBuilder.CreateMessage("BusinessType", "Hello World!");
+            var message = FluentMessageBuilder.CreateMessage("BusinessType", "Hello World!");
             message.Properties.MessageId = "1b0a9b7b-92e6-4f2a-a2d2-8bc679ffbdd4";
             var result = message.ToVerboseString();
 

@@ -2,7 +2,7 @@
 using System.Text;
 using Amqp;
 
-namespace EdxLib
+namespace Statnett.EdxLib
 {
     public static class MessageReaderExtensions
     {

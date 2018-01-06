@@ -2,7 +2,7 @@
 using System.Configuration;
 using Amqp;
 using System.Threading.Tasks;
-using EdxLib;
+using Statnett.EdxLib;
 
 // ReSharper disable All
 
@@ -19,7 +19,7 @@ namespace SimpleReceiver
         private static async Task SendMessage()
         {
             var edxUrl = ConfigurationManager.AppSettings["EdxUrl"];
-            
+
             var readQueue = ConfigurationManager.AppSettings["EdxInboxQueue"]; // For reading normal input messages
             //var readQueue = ConfigurationManager.AppSettings["EdxOutboxReplyQueue"]; // For reading sent message status from EDX
 

@@ -2,7 +2,7 @@
 using Amqp;
 using Amqp.Types;
 
-namespace EdxLib
+namespace Statnett.EdxLib
 {
     public static class DebugOutputExtensions
     {

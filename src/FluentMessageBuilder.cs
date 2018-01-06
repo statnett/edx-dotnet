@@ -5,9 +5,9 @@ using Amqp.Framing;
 
 #pragma warning disable 1573
 
-namespace EdxLib
+namespace Statnett.EdxLib
 {
-    public static class MessageBuilder
+    public static class FluentMessageBuilder
     {
         /// <summary>
         /// Create a text message with content ecoded as UTF-8

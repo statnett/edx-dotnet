@@ -8,8 +8,8 @@
     <ProjectGuid>{D4015838-646E-46B9-991A-DB5E822E3776}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>EdxLibTests</RootNamespace>
-    <AssemblyName>EdxLibTests</AssemblyName>
+    <RootNamespace>Statnett.EdxLib.Tests</RootNamespace>
+    <AssemblyName>Statnett.EdxLib.Tests</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <NuGetPackageImportStamp>
@@ -58,9 +58,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\EdxLib\EdxLib.csproj">
+    <ProjectReference Include="..\src\Statnett.EdxLib.csproj">
       <Project>{59648398-6aef-4b8e-afaa-d5135c118120}</Project>
-      <Name>EdxLib</Name>
+      <Name>Statnett.EdxLib</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

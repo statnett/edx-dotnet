@@ -1,4 +1,4 @@
-﻿namespace EdxLib
+﻿namespace Statnett.EdxLib
 {
     public static class Constants
     {

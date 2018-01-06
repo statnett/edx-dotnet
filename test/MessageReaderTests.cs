@@ -1,9 +1,8 @@
 ﻿using System;
 using Amqp;
-using EdxLib;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace EdxLibTests
+namespace Statnett.EdxLib.Tests
 {
     [TestClass]
     public class MessageReaderTests
@@ -13,7 +12,7 @@ namespace EdxLibTests
         [TestInitialize]
         public void Setup()
         {
-            _message = MessageBuilder.CreateMessage("BusinessType", "Hello World!");
+            _message = FluentMessageBuilder.CreateMessage("BusinessType", "Hello World!");
         }
 
         [TestMethod]
