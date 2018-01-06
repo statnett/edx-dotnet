@@ -6,7 +6,7 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{AFE7E2CB-3928-4198-AD68-FB2615FCB9B0}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>SimpleSender</RootNamespace>
+    <RootNamespace>Examples</RootNamespace>
     <AssemblyName>SimpleSender</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
@@ -46,6 +46,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Tools\DebugOutputExtensions.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Sender.cs" />
   </ItemGroup>
@@ -59,5 +60,6 @@
       <Name>Statnett.EdxLib</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

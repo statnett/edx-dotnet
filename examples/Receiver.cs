@@ -2,7 +2,7 @@
 using System.Configuration;
 using Amqp;
 using System.Threading.Tasks;
-using Statnett.EdxLib;
+using Examples.Tools;
 
 // ReSharper disable All
 

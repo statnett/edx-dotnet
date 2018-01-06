@@ -46,7 +46,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Constants.cs" />
-    <Compile Include="DebugOutputExtensions.cs" />
     <Compile Include="FluentMessageBuilder.cs" />
     <Compile Include="MessageReaderExtensions.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

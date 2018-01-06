@@ -6,7 +6,7 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{E0B64A69-6F38-4FEE-806D-E2A931947ABE}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>SimpleReceiver</RootNamespace>
+    <RootNamespace>Examples</RootNamespace>
     <AssemblyName>SimpleReceiver</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
@@ -48,6 +48,7 @@
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Receiver.cs" />
+    <Compile Include="Tools\DebugOutputExtensions.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config">
