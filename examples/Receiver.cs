@@ -2,7 +2,8 @@
 using System.Configuration;
 using Amqp;
 using System.Threading.Tasks;
-using Examples.Tools;
+using Newtonsoft.Json;
+using Statnett.EdxLib;
 
 // ReSharper disable All
 
@@ -63,7 +64,8 @@ namespace SimpleReceiver
             }
             else
             {
-                Console.WriteLine(message.ToVerboseString(true));
+                Console.WriteLine(JsonConvert.SerializeObject(message, Formatting.Indented));
+                Console.WriteLine(message.DecodeBodyAsString());
             }
         }
     }
