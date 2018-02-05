@@ -25,6 +25,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleReceiver", "examples\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleSender", "examples\SimpleSender.csproj", "{AFE7E2CB-3928-4198-AD68-FB2615FCB9B0}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleReplyReceiver", "examples\SimpleReplyReceiver.csproj", "{60844797-8DBD-49FB-86BB-057720897A21}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -47,6 +49,10 @@ Global
 		{AFE7E2CB-3928-4198-AD68-FB2615FCB9B0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AFE7E2CB-3928-4198-AD68-FB2615FCB9B0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AFE7E2CB-3928-4198-AD68-FB2615FCB9B0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{60844797-8DBD-49FB-86BB-057720897A21}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{60844797-8DBD-49FB-86BB-057720897A21}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{60844797-8DBD-49FB-86BB-057720897A21}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{60844797-8DBD-49FB-86BB-057720897A21}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -55,6 +61,7 @@ Global
 		{D4015838-646E-46B9-991A-DB5E822E3776} = {5AD3F971-F5C6-478E-ADB1-A1C56F28E76D}
 		{E0B64A69-6F38-4FEE-806D-E2A931947ABE} = {E4BDE7B4-5E1D-4F44-85DD-47DC8DEAACD8}
 		{AFE7E2CB-3928-4198-AD68-FB2615FCB9B0} = {E4BDE7B4-5E1D-4F44-85DD-47DC8DEAACD8}
+		{60844797-8DBD-49FB-86BB-057720897A21} = {E4BDE7B4-5E1D-4F44-85DD-47DC8DEAACD8}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {D3E7A283-22F3-4057-8BF8-31E38A711DC1}

@@ -7,7 +7,7 @@ using Statnett.EdxLib;
 
 namespace Examples
 {
-    internal class Receiver
+    internal class ReplyReceiver
     {
         private static void Main(string[] args)
         {
@@ -19,7 +19,7 @@ namespace Examples
         {
             var edxUrl = ConfigurationManager.AppSettings["EdxUrl"];
 
-            var readQueue = ConfigurationManager.AppSettings["EdxInboxQueue"];
+            var readQueue = ConfigurationManager.AppSettings["EdxOutboxReplyQueue"];
 
             var connection = new Connection(new Address(edxUrl));
             var session = new Session(connection);
@@ -27,6 +27,8 @@ namespace Examples
 
             // App settings            
             var timeout = int.Parse(ConfigurationManager.AppSettings["TimeoutMs"]);
+
+
 
             try
             {

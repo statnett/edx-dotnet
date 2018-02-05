@@ -3,7 +3,7 @@ using System.Configuration;
 using Amqp;
 using Statnett.EdxLib;
 
-namespace SimpleSender
+namespace Examples
 {
     internal class Sender
     {
