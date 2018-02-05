@@ -7,7 +7,7 @@
     <ProjectGuid>{60844797-8DBD-49FB-86BB-057720897A21}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <RootNamespace>Examples</RootNamespace>
-    <AssemblyName>SimpleReceiver</AssemblyName>
+    <AssemblyName>SimpleReplyReceiver</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>

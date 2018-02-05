@@ -48,6 +48,10 @@
     <Compile Include="Constants.cs" />
     <Compile Include="FluentMessageBuilder.cs" />
     <Compile Include="MessageReaderExtensions.cs" />
+    <Compile Include="ModelExtensions\EdxReplyMetadata.cs" />
+    <Compile Include="ModelExtensions\MessageResult.cs" />
+    <Compile Include="ModelExtensions\MessageStatus.cs" />
+    <Compile Include="ModelExtensions\Status.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
