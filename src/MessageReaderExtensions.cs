@@ -2,22 +2,50 @@
 using System.Text;
 using System.Xml;
 using Amqp;
+using Statnett.EdxLib.Exceptions;
 using Statnett.EdxLib.ModelExtensions;
 
 namespace Statnett.EdxLib
 {
     public static class MessageReaderExtensions
     {
-        public static MessageStatus DecodeBodyAsMessageStatus(this Message msg)
+        public static MessageResult DecodeBodyAsMessageStatus(this Message msg)
         {
             var xml = msg.DecodeBodyAsXml();
 
-            if (xml.Name != "StatusDocument")
+            if (xml.DocumentElement == null || !"edx:StatusDocument".Equals(xml.DocumentElement.Name, StringComparison.InvariantCultureIgnoreCase))
             {
                 throw new ArgumentException(string.Format("Malformed body: {0}", xml), "msg");
             }
 
-            return new MessageStatus();
+            var result = new MessageResult();
+            
+            ExtractFinalMessageStatus(xml, result);
+
+            return result;
+        }
+
+        private static void ExtractFinalMessageStatus(XmlDocument xml, MessageResult result)
+        {
+            var finalXml = xml.DocumentElement["finalMessageStatus"];
+            if (finalXml != null)
+            {
+                var final = new MessageStatus();
+
+                var status = finalXml["status"].Attributes["v"].InnerText;
+                final.Status = (Status) Enum.Parse(typeof(Status), status, true);
+
+                var statusText = finalXml["statusText"];
+                if (statusText != null)
+                {
+                    final.StatusText = statusText.Attributes["v"].InnerText;
+                }
+
+                var timeStamp = finalXml["changeTimestamp"].Attributes["v"].InnerText;
+                final.ChangeTimeStamp = DateTime.Parse(timeStamp).ToUniversalTime();
+
+                result.FinalMessageStatus = final;
+            }
         }
 
         public static XmlDocument DecodeBodyAsXml(this Message message)
@@ -58,10 +86,10 @@ namespace Statnett.EdxLib
             {
                 var bodyType = message.Body != null ? message.Body.GetType().Name : "<null>";
                 var result = string.Format("Expected byte array, got {0}", bodyType);
-                throw new Exception(result); // TODO: Custom exception
+                throw new EdxException(result);
             }
 
-            throw new Exception("Conversion error: Wrong encoding"); // TODO: Custom exception
+            throw new EdxException("Conversion error: Wrong encoding");
         }
 
         public static string GetReceiver(this Message message)

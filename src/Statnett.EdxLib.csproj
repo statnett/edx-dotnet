@@ -46,6 +46,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Constants.cs" />
+    <Compile Include="Exceptions\EdxException.cs" />
     <Compile Include="FluentMessageBuilder.cs" />
     <Compile Include="MessageReaderExtensions.cs" />
     <Compile Include="ModelExtensions\EdxReplyMetadata.cs" />
