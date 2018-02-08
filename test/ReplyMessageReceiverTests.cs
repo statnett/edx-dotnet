@@ -11,10 +11,10 @@ namespace Statnett.EdxLib.Tests
         [TestMethod]
         public void CanReadFailingMessage()
         {
-            var expected = new MessageResult
+            var expected = new StatusDocument
             {
                 FinalMessageStatus = ExpectedFinalErrorMessage
-            };         
+            };
 
             var result = CreateErrorMessage().DecodeBodyAsMessageStatus();
 

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 using System.Text;
 using System.Xml;
 using Amqp;
@@ -9,42 +10,15 @@ namespace Statnett.EdxLib
 {
     public static class MessageReaderExtensions
     {
-        public static MessageResult DecodeBodyAsMessageStatus(this Message msg)
+        public static StatusDocument DecodeBodyAsMessageStatus(this Message msg)
         {
-            var xml = msg.DecodeBodyAsXml();
+            var str = msg.DecodeBodyAsString();
 
-            if (xml.DocumentElement == null || !"edx:StatusDocument".Equals(xml.DocumentElement.Name, StringComparison.InvariantCultureIgnoreCase))
+            using (TextReader sr = new StringReader(str))
             {
-                throw new ArgumentException(string.Format("Malformed body: {0}", xml), "msg");
-            }
-
-            var result = new MessageResult();
-            
-            ExtractFinalMessageStatus(xml, result);
-
-            return result;
-        }
-
-        private static void ExtractFinalMessageStatus(XmlDocument xml, MessageResult result)
-        {
-            var finalXml = xml.DocumentElement["finalMessageStatus"];
-            if (finalXml != null)
-            {
-                var final = new MessageStatus();
-
-                var status = finalXml["status"].Attributes["v"].InnerText;
-                final.Status = (Status) Enum.Parse(typeof(Status), status, true);
-
-                var statusText = finalXml["statusText"];
-                if (statusText != null)
-                {
-                    final.StatusText = statusText.Attributes["v"].InnerText;
-                }
-
-                var timeStamp = finalXml["changeTimestamp"].Attributes["v"].InnerText;
-                final.ChangeTimeStamp = DateTime.Parse(timeStamp).ToUniversalTime();
-
-                result.FinalMessageStatus = final;
+                var serializer = new System.Xml.Serialization.XmlSerializer(typeof(StatusDocument));
+                var response = (StatusDocument)serializer.Deserialize(sr);
+                return response;
             }
         }
 

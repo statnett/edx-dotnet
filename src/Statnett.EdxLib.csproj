@@ -50,13 +50,16 @@
     <Compile Include="FluentMessageBuilder.cs" />
     <Compile Include="MessageReaderExtensions.cs" />
     <Compile Include="ModelExtensions\EdxReplyMetadata.cs" />
-    <Compile Include="ModelExtensions\MessageResult.cs" />
+    <Compile Include="ModelExtensions\StatusDocument.cs" />
     <Compile Include="ModelExtensions\MessageStatus.cs" />
     <Compile Include="ModelExtensions\Status.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Status\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
