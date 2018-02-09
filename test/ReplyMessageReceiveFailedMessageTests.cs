@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using Amqp;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Statnett.EdxLib.ModelExtensions;
@@ -6,33 +7,43 @@ using Statnett.EdxLib.ModelExtensions;
 namespace Statnett.EdxLib.Tests
 {
     [TestClass]
-    public class ReplyMessageReceiverTests
+    public class ReplyMessageReceiveFailedMessageTests
     {
-        [TestMethod]
-        public void CanReadFailingMessage()
+        private StatusDocument _statusDocument;
+
+        [TestInitialize]
+        public void Setup()
         {
-            var expected = new StatusDocument
-            {
-                FinalMessageStatus = ExpectedFinalErrorMessage
-            };
-
-            var result = CreateErrorMessage().DecodeBodyAsMessageStatus();
-
-            Assert.AreEqual(expected, result);
+            var message = CreateErrorMessage();
+            _statusDocument = message.DecodeBodyAsMessageStatus();
         }
 
-        private static MessageStatus ExpectedFinalErrorMessage
+        [TestMethod]
+        public void ReadsEdxMetadata()
         {
-            get
-            {
-                var expectedFinalMessage = new MessageStatus
-                {
-                    ChangeTimeStamp = new DateTime(2018, 02, 05, 17, 05, 26, DateTimeKind.Utc),
-                    Status = Status.Failed,
-                    StatusText = "This toolbox has no relation to the service MYSERVICE."
-                };
-                return expectedFinalMessage;
-            }
+            var data = _statusDocument.EdxReplyMetadata;
+            Assert.AreEqual(new DateTime(2018, 02, 05, 17, 05, 26, DateTimeKind.Utc), data.ReceiveTimestamp.Value);
+            Assert.IsNull(data.OriginalMessageId);
+        }
+
+        [TestMethod]
+        public void ReadsFinalMessageStatus()
+        {
+            var status = _statusDocument.FinalMessageStatus;
+
+            Assert.AreEqual(new DateTime(2018, 02, 05, 17, 05, 26, DateTimeKind.Utc), status.ChangeTimeStamp.Value);
+            Assert.AreEqual(Status.Failed, status.Status.Value);            
+            Assert.AreEqual("This toolbox has no relation to the service MYSERVICE.", status.StatusText.Value);
+        }
+
+        [TestMethod]
+        public void ReadsStatusHistory()
+        {
+            var status = _statusDocument.StatusHistory.Single();
+
+            Assert.AreEqual(new DateTime(2018, 02, 05, 17, 05, 26, DateTimeKind.Utc), status.ChangeTimeStamp.Value);
+            Assert.AreEqual(Status.Failed, status.Status.Value);
+            Assert.AreEqual("This toolbox has no relation to the service MYSERVICE.", status.StatusText.Value);
         }
 
         private static Message CreateErrorMessage()

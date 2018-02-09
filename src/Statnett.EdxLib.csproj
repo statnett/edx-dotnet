@@ -49,10 +49,13 @@
     <Compile Include="Exceptions\EdxException.cs" />
     <Compile Include="FluentMessageBuilder.cs" />
     <Compile Include="MessageReaderExtensions.cs" />
+    <Compile Include="ModelExtensions\DateValue.cs" />
     <Compile Include="ModelExtensions\EdxReplyMetadata.cs" />
     <Compile Include="ModelExtensions\StatusDocument.cs" />
     <Compile Include="ModelExtensions\MessageStatus.cs" />
     <Compile Include="ModelExtensions\Status.cs" />
+    <Compile Include="ModelExtensions\StatusValue.cs" />
+    <Compile Include="ModelExtensions\StringValue.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
