@@ -61,6 +61,7 @@ namespace Examples
             }
             else
             {
+                Console.WriteLine("Received message:");
                 Console.WriteLine(JsonConvert.SerializeObject(message, Formatting.Indented));
                 Console.WriteLine(message.DecodeBodyAsString());
             }
