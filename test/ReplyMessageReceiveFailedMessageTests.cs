@@ -46,6 +46,13 @@ namespace Statnett.EdxLib.Tests
             Assert.AreEqual("This toolbox has no relation to the service MYSERVICE.", status.StatusText.Value);
         }
 
+        [TestMethod]
+        public void GivenNoSuccessfullySentStatus_ShowsIsSuccessfulltSentFalse()
+        {
+            var status = _statusDocument.IsSuccessfullySent();
+            Assert.IsFalse(status);
+        }
+
         private static Message CreateErrorMessage()
         {
             /*

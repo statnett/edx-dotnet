@@ -56,6 +56,7 @@
     <Compile Include="MessageReaderTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ReplyMessageReceiveFailedMessageTests.cs" />
+    <Compile Include="ReplyMessageReceiverSuccessMessageTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\src\Statnett.EdxLib.csproj">

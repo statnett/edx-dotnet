@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using System.Xml.Serialization;
 
 namespace Statnett.EdxLib.ModelExtensions
@@ -17,5 +18,12 @@ namespace Statnett.EdxLib.ModelExtensions
         [XmlArrayItem(ElementName = "messageStatus", Type = typeof(MessageStatus))]
         [XmlArray(ElementName = "statusHistory", Namespace = "")]
         public MessageStatus[] StatusHistory { get; set; }
+
+        public bool IsSuccessfullySent()
+        {
+            return StatusHistory != null && StatusHistory
+                       .Where(i => i.Status != null)
+                       .Any(i => i.Status.Value == Status.SuccessfullySent);
+        }
     }
 }
