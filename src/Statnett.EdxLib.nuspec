@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>$id$</id>
+    <version>$version$</version>
+    <title>$title$</title>
+ <authors>Statnett</authors>
+    <owners>Statnett</owners>
+    <licenseUrl>https://github.com/statnett/edx-dotnet/blob/master/license.txt</licenseUrl>
+    <projectUrl>https://github.com/statnett/edx-dotnet</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>EDX extension to AMQPNetLite</description>
+    <releaseNotes>Preliminary release.</releaseNotes>
+    <copyright>Copyright 2018</copyright>
+    <tags>EDX AMQP</tags>
+  </metadata>
+</package>
