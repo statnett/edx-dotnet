@@ -19,11 +19,14 @@ namespace Statnett.EdxLib.ModelExtensions
         [XmlArray(ElementName = "statusHistory", Namespace = "")]
         public MessageStatus[] StatusHistory { get; set; }
 
-        public bool IsSuccessfullySent()
+        public bool IsSuccessfullySent
         {
-            return StatusHistory != null && StatusHistory
-                       .Where(i => i.Status != null)
-                       .Any(i => i.Status.Value == Status.SuccessfullySent);
+            get
+            {
+                return StatusHistory != null && StatusHistory
+                           .Where(i => i.Status != null)
+                           .Any(i => i.Status.Value == Status.SuccessfullySent);
+            }            
         }
     }
 }

@@ -49,8 +49,7 @@ namespace Statnett.EdxLib.Tests
         [TestMethod]
         public void GivenNoSuccessfullySentStatus_ShowsIsSuccessfulltSentFalse()
         {
-            var status = _statusDocument.IsSuccessfullySent();
-            Assert.IsFalse(status);
+            Assert.IsFalse(_statusDocument.IsSuccessfullySent);
         }
 
         private static Message CreateErrorMessage()
