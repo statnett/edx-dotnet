@@ -69,6 +69,7 @@ namespace Examples
                 Console.WriteLine("Parsing body as status message...");
                 var status = message.DecodeBodyAsMessageStatus();
                 Console.WriteLine(JsonConvert.SerializeObject(status, Formatting.Indented));
+
                 Console.Write("Successfully sent: ");
                 Console.WriteLine(status.IsSuccessfullySent ? "Yes" : "No");
             }
