@@ -4,6 +4,9 @@
     <id>$id$</id>
     <version>$version$</version>
     <title>$title$</title>
+    <packageTypes>
+      <packageType name="Dependency" />
+    </packageTypes>
  <authors>Statnett</authors>
     <owners>Statnett</owners>
     <licenseUrl>https://github.com/statnett/edx-dotnet/blob/master/license.txt</licenseUrl>
